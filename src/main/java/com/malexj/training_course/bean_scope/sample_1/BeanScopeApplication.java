@@ -1,15 +1,20 @@
-package com.malexj.training_course.bean_scope;
+package com.malexj.training_course.bean_scope.sample_1;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import com.malexj.training_course.base.AbstractClass;
-import com.malexj.training_course.bean_scope.bean.HeadChef;
-import com.malexj.training_course.bean_scope.bean.Waiter;
-import com.malexj.training_course.bean_scope.config.RestaurantConfig;
+import com.malexj.training_course.bean_scope.sample_1.bean.HeadChef;
+import com.malexj.training_course.bean_scope.sample_1.bean.Waiter;
+import com.malexj.training_course.bean_scope.sample_1.config.RestaurantConfig;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+/**
+ * Documentation: <a
+ * href="https://docs.spring.io/spring-framework/reference/core/beans/factory-scopes.html">Bean
+ * Scope</a>
+ */
 public class BeanScopeApplication extends AbstractClass {
 
   @Test

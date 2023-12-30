@@ -1,4 +1,4 @@
-package com.malexj.training_course.bean_scope.bean;
+package com.malexj.training_course.bean_scope.sample_1.bean;
 
 import lombok.Data;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
