@@ -7,6 +7,13 @@ import java.util.stream.IntStream;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+/**
+ * Tutorial: <a
+ * href="https://www.youtube.com/watch?v=RecrXqhauWk&list=PLHl4uBTw_rjOXbZQ08Y65ZyhSIQ56GoBt&index=12">Spring
+ * Framework. Proxy</a>
+ *
+ *
+ */
 public class AppMainProxy {
 
   public static void main(String[] args) {
