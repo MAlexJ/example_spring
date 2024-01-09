@@ -1,4 +1,4 @@
-package com.malexj.training_course.event_listener.events;
+package com.malexj.training_course.event_listener.base.events;
 
 import com.malexj.training_course.base.AbstractClass;
 import org.springframework.context.event.ContextStoppedEvent;

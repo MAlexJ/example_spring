@@ -1,6 +1,6 @@
-package com.malexj.training_course.event_listener;
+package com.malexj.training_course.event_listener.base;
 
-import com.malexj.training_course.event_listener.config.EvenListenerConfiguration;
+import com.malexj.training_course.event_listener.base.config.EvenListenerConfiguration;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**

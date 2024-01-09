@@ -1,4 +1,4 @@
-package com.malexj.training_course.event_listener.config;
+package com.malexj.training_course.event_listener.base.config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
