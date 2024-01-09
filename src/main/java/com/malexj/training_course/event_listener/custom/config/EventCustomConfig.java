@@ -1,25 +1,26 @@
 package com.malexj.training_course.event_listener.custom.config;
 
-import com.malexj.training_course.event_listener.custom.bean.Chef;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-
-import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.LinkedBlockingQueue;
+import org.springframework.scheduling.TaskScheduler;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
 
 @Configuration
+@EnableScheduling
 @ComponentScan("com.malexj.training_course.event_listener.custom")
 public class EventCustomConfig {
 
-    @Bean
-    public BlockingQueue<String> blockingQueue(){
-        return new LinkedBlockingQueue<>();
-    }
+  @Bean
+  public BlockingQueue<String> blockingQueue() {
+    return new LinkedBlockingQueue<>();
+  }
 
-
-    @Bean(initMethod = "init")
-    public Chef chef(BlockingQueue<String> queue){
-        return new Chef(queue);
-    }
+  @Bean
+  public TaskScheduler threadPoolTaskScheduler() {
+    return new ThreadPoolTaskScheduler();
+  }
 }
