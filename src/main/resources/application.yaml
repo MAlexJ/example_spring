@@ -1,1 +1,5 @@
-
+restaurant:
+  name: French Restaurant
+  capacity: 50
+  menu: Spaghetti,Cesar Salad,Grilled Salmon
+  description: "Name: ${restaurant.name} capacity: ${restaurant.capacity}"
