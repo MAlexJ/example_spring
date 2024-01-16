@@ -3,8 +3,10 @@ package com.malexj.training_course.postprocessor.bean;
 import com.malexj.training_course.base.AbstractClass;
 import com.malexj.training_course.postprocessor.annotation.Discount;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @Data
+@EqualsAndHashCode(callSuper = false)
 public class Food extends AbstractClass {
   private String type;
   private String dishName;
