@@ -7,7 +7,9 @@ import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.support.GenericBeanDefinition;
+import org.springframework.stereotype.Component;
 
+@Component
 public class MenuFactoryBeanPostProcessor implements BeanFactoryPostProcessor {
 
   @Override
@@ -26,7 +28,6 @@ public class MenuFactoryBeanPostProcessor implements BeanFactoryPostProcessor {
     var constructorArgumentValues = beanDefinition.getConstructorArgumentValues();
     constructorArgumentValues.addIndexedArgumentValue(0, type);
     constructorArgumentValues.addIndexedArgumentValue(1, dishName);
-
     beanFactory.registerBeanDefinition(dishName.toLowerCase(), beanDefinition);
   }
 }
