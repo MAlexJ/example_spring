@@ -19,10 +19,17 @@ public class LifeCycleApp {
    */
   @Test
   public void testPostConstructAndPreDestroyAnnotation() {
+    // given
     AnnotationConfigApplicationContext ctx =
         new AnnotationConfigApplicationContext(LifeCycleConfiguration.class);
+
+    // when
     var note = ctx.getBean(Note.class);
+
+    // then
     assertEquals("note", note.info("note"));
+
+    // and
     ctx.close();
   }
 
@@ -32,10 +39,17 @@ public class LifeCycleApp {
    */
   @Test
   public void testBeanConfigurationInitAndDestroyAnnotation() {
+    // given
     AnnotationConfigApplicationContext ctx =
         new AnnotationConfigApplicationContext(LifeCycleConfiguration.class);
+
+    // when
     var phone = ctx.getBean(Phone.class);
+
+    // then
     assertEquals("Nokia", phone.info("Nokia"));
+
+    // and
     ctx.close();
   }
 
@@ -47,10 +61,17 @@ public class LifeCycleApp {
    */
   @Test
   public void testBeanWithInitializingBeaDisposableBeanInterfaces() {
+    // given
     AnnotationConfigApplicationContext ctx =
         new AnnotationConfigApplicationContext(LifeCycleConfiguration.class);
+
+    // when
     var shop = ctx.getBean(Shop.class);
+
+    // then
     assertEquals("Laptop", shop.info("Nokia"));
+
+    // and
     ctx.close();
   }
 }
