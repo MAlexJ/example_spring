@@ -20,3 +20,7 @@ info: https://github.com/ben-manes/gradle-versions-plugin
 ```
 run gradle dependencyUpdates
 ```
+
+### IDE code style
+
+link: https://github.com/google/google-java-format/tree/master
