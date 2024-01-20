@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class BooksResponse {
+public class BookListResponse {
 
   private List<BookResponse> books;
 }
