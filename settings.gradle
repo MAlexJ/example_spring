@@ -1,3 +1,2 @@
 rootProject.name = 'example_spring'
-include 'spring-aop-web-service',
-        'spring-core'
+include 'spring-core', 'spring-aop-web-service'
