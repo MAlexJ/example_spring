@@ -1,8 +1,8 @@
 package com.malexj.mapper;
 
 import com.malexj.entity.Book;
-import com.malexj.model.request.BookRequest;
-import com.malexj.model.response.BookResponse;
+import com.malexj.model.request.BookDtoRequest;
+import com.malexj.model.response.BookDtoResponse;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
@@ -11,7 +11,7 @@ import org.mapstruct.Mapping;
 public interface ObjectMapper {
 
   @Mapping(target = "id", ignore = true)
-  Book requestToEntity(BookRequest request);
+  Book requestToEntity(BookDtoRequest request);
 
-  BookResponse entityToResponse(Book entity);
+  BookDtoResponse entityToResponse(Book entity);
 }

@@ -1,13 +1,11 @@
-package com.malexj.model.response;
+package com.malexj.model.request;
 
 import lombok.Data;
 import lombok.ToString;
 
 @Data
 @ToString
-public class BookResponse {
-  public Long id;
-
+public class BookDtoRequest {
   private String title;
 
   private String author;

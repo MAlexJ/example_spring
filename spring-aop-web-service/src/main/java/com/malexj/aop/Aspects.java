@@ -1,12 +1,11 @@
 package com.malexj.aop;
 
-import com.malexj.service.BookService;
-import java.lang.reflect.Method;
+import com.malexj.exception.WebApplicationException;
 import java.util.Arrays;
-import java.util.List;
-import lombok.SneakyThrows;
+import java.util.Optional;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.Signature;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.springframework.stereotype.Component;
@@ -16,20 +15,22 @@ import org.springframework.stereotype.Component;
 @Component
 public class Aspects {
 
-  private static final List<String> methods;
-
-  static {
-    methods = Arrays.stream(BookService.class.getDeclaredMethods()).map(Method::getName).toList();
-  }
-
-  @SneakyThrows
-  @Around("Pointcuts.allFindMethods()")
+  @Around("Pointcuts.allPublicServiceMethods()")
   public Object aroundAdvice(ProceedingJoinPoint joinPoint) {
-    String name = joinPoint.getSignature().getName();
-    if (methods.contains(name)) {
-      Arrays.stream(joinPoint.getArgs())
-          .forEach(title -> log.info("BookService, method - {}, title - {}", name, title));
+    Signature signature = joinPoint.getSignature();
+    String methodName = joinPoint.getSignature().getName();
+    log.info(
+        "class: {}, method: {}, args: {}",
+        signature.getDeclaringTypeName(),
+        methodName,
+        Optional.of(joinPoint.getArgs()).map(Arrays::toString).orElse(""));
+    Object proceed;
+    try {
+      proceed = joinPoint.proceed();
+    } catch (Throwable e) {
+      log.warn(e.getMessage());
+      throw new WebApplicationException("Aspects exception:", e);
     }
-    return joinPoint.proceed();
+    return proceed;
   }
 }

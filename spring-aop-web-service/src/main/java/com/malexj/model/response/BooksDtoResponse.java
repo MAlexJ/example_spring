@@ -8,7 +8,7 @@ import lombok.ToString;
 @Data
 @ToString
 @AllArgsConstructor
-public class BookListResponse {
+public class BooksDtoResponse {
 
-  private List<BookResponse> books;
+  private List<BookDtoResponse> books;
 }
