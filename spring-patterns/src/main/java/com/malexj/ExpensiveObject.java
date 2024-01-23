@@ -1,4 +1,4 @@
-package com.malexj.patterns;
+package com.malexj;
 
 public interface ExpensiveObject {
   String process();

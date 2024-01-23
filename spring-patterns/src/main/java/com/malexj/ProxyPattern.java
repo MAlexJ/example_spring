@@ -1,8 +1,7 @@
-package com.malexj.patterns;
+package com.malexj;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import com.malexj.training_course.base.AbstractClass;
 import org.junit.jupiter.api.Test;
 
 /**
