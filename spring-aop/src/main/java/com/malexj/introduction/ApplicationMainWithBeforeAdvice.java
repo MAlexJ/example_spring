@@ -12,13 +12,21 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  * href="https://www.youtube.com/watch?v=nQffFaKvGQc&list=PLqj7-hRTFl_p-t5F2zSUlG6_9UIoE2r70">Full
  * Spring courses</a>
  */
-public class ApplicationMain extends AbstractClass {
+public class ApplicationMainWithBeforeAdvice extends AbstractClass {
 
   @Test
   public void testBeforePointcut() {
     ApplicationContext ctx = new AnnotationConfigApplicationContext(ApplicationConfig.class);
-    var user = ctx.getBean("shop", Shop.class);
-    String info = user.info("Info");
-    println(info);
+    var shop = ctx.getBean("shop", Shop.class);
+    String info = shop.info("Info");
+    println("result:", info);
+  }
+
+  @Test
+  public void testBeforeAnnotationPointcut() {
+    ApplicationContext ctx = new AnnotationConfigApplicationContext(ApplicationConfig.class);
+    var shop = ctx.getBean("shop", Shop.class);
+    String info = shop.addInfo("Info");
+    println("result:", info);
   }
 }

@@ -1,4 +1,4 @@
-package com.malexj.aop;
+package com.malexj.introduction.aop;
 
 import com.malexj.exception.WebApplicationException;
 import java.util.Arrays;

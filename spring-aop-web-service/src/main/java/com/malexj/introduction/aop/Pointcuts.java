@@ -1,4 +1,4 @@
-package com.malexj.aop;
+package com.malexj.introduction.aop;
 
 import org.aspectj.lang.annotation.Pointcut;
 
