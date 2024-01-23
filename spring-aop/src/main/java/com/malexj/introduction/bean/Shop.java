@@ -1,6 +1,6 @@
-package com.malexj.bean;
+package com.malexj.introduction.bean;
 
-import com.malexj.base.AbstractClass;
+import com.malexj.introduction.base.AbstractClass;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.springframework.stereotype.Component;

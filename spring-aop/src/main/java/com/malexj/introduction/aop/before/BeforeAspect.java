@@ -1,4 +1,4 @@
-package com.malexj.aop;
+package com.malexj.introduction.aop;
 
 import com.malexj.base.AbstractClass;
 import org.aspectj.lang.JoinPoint;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Aspects extends AbstractClass {
 
-  @Before("com.malexj.aop.Pointcuts.userInfoMethods()")
+  @Before("com.malexj.introduction.aop.Pointcuts.userInfoMethods()")
   public void aroundAdvice(JoinPoint joinPoint) {
     MethodSignature signature = (MethodSignature) joinPoint.getSignature();
     println(signature.getReturnType());
