@@ -1,7 +1,8 @@
-package com.malexj;
+package com.malexj.proxy;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import com.malexj.base.AbstractClass;
 import org.junit.jupiter.api.Test;
 
 /**

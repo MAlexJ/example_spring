@@ -1,4 +1,4 @@
-package com.malexj;
+package com.malexj.proxy;
 
 import java.util.UUID;
 

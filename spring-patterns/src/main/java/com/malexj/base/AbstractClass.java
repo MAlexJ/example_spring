@@ -1,4 +1,4 @@
-package com.malexj;
+package com.malexj.base;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;

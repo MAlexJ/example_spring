@@ -1,4 +1,4 @@
-package com.malexj;
+package com.malexj.proxy;
 
 public interface ExpensiveObject {
   String process();

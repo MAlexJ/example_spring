@@ -1,8 +1,8 @@
-package com.malexj;
+package com.malexj.proxy;
 
 public class ExpensiveObjectProxy implements ExpensiveObject {
 
-  private static ExpensiveObject object;
+  private ExpensiveObject object;
 
   @Override
   public String process() {
