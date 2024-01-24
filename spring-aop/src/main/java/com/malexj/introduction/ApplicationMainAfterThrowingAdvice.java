@@ -9,12 +9,13 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
- * After throwing advice: <br>
- * <br>
- * 1. Executed if the target method throws an exception.<br>
- * 2. Useful for handling exceptions or logging errors.
+ * After Throwing Advice:
+ *
+ * <p>1. Executed if the target method throws an exception.
+ *
+ * <p>2. Useful for handling exceptions or logging errors.
  */
-public class ApplicationMainAfterThrowing {
+public class ApplicationMainAfterThrowingAdvice {
 
   @Test
   public void testAfterThrowing() {

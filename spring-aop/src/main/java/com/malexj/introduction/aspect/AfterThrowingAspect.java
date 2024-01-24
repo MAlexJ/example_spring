@@ -1,4 +1,4 @@
-package com.malexj.introduction.aop.afterThrowing;
+package com.malexj.introduction.aspect;
 
 import com.malexj.base.AbstractClass;
 import org.aspectj.lang.JoinPoint;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 public class AfterThrowingAspect extends AbstractClass {
 
   @AfterThrowing(
-      pointcut = "com.malexj.introduction.aop.afterThrowing.AfterThrowingPointcut.studentMethods()",
+      pointcut = "com.malexj.introduction.pointcut.AfterThrowingPointcut.studentMethods()",
       throwing = "error")
   public void studentAfterThrowingAdvice(JoinPoint joinPoint, Throwable error) {
     println("1.1.", "Signature:", joinPoint.getSignature().getName());

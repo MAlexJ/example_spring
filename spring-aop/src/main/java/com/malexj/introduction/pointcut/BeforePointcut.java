@@ -1,4 +1,4 @@
-package com.malexj.introduction.aop.before;
+package com.malexj.introduction.pointcut;
 
 import com.malexj.introduction.annotation.MyAnnotation;
 import org.aspectj.lang.annotation.Pointcut;

@@ -1,4 +1,4 @@
-package com.malexj.introduction.aop.before;
+package com.malexj.introduction.aspect;
 
 import com.malexj.base.AbstractClass;
 import com.malexj.introduction.annotation.MyAnnotation;
@@ -19,7 +19,7 @@ import org.springframework.stereotype.Component;
 public class BeforeAspect extends AbstractClass {
 
   /** Before Advice */
-  @Before("com.malexj.introduction.aop.before.BeforePointcut.shopInfoMethods()")
+  @Before("com.malexj.introduction.pointcut.BeforePointcut.shopInfoMethods()")
   public void beforeShopAdvice(JoinPoint joinPoint) {
     MethodSignature signature = (MethodSignature) joinPoint.getSignature();
     println(signature.getReturnType());
@@ -27,7 +27,7 @@ public class BeforeAspect extends AbstractClass {
   }
 
   @Before(
-      value = "com.malexj.introduction.aop.before.BeforePointcut.shopAddInfoMethods( myAnnotation)",
+      value = "com.malexj.introduction.pointcut.BeforePointcut.shopAddInfoMethods( myAnnotation)",
       argNames = "joinPoint,myAnnotation")
   public void beforeAnnotationShopAdvice(JoinPoint joinPoint, MyAnnotation myAnnotation) {
     MethodSignature signature = (MethodSignature) joinPoint.getSignature();

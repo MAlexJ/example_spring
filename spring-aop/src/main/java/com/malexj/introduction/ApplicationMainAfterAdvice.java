@@ -11,13 +11,14 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
- * After (finally) advice: <br>
- * <br>
- * 1. Executed after the target method, regardless of whether it completes successfully or throws an
- * exception. <br>
- * 2. Used for cleanup tasks. <br>
- * <br>
- * Link to tutorial: <a *
+ * After (finally) advice:
+ *
+ * <p>1. Executed after the target method, regardless of whether it completes successfully or throws
+ * an exception.
+ *
+ * <p>2. Used for cleanup tasks.
+ *
+ * <p>Link to tutorial: <a *
  * href="https://www.youtube.com/watch?v=nQffFaKvGQc&list=PLqj7-hRTFl_p-t5F2zSUlG6_9UIoE2r70">Full *
  * Spring courses</a>
  */

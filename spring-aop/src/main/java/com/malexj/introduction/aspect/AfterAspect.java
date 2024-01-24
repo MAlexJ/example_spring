@@ -1,4 +1,4 @@
-package com.malexj.introduction.aop.after;
+package com.malexj.introduction.aspect;
 
 import com.malexj.base.AbstractClass;
 import org.aspectj.lang.JoinPoint;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class AfterAspect extends AbstractClass {
 
-  @After("com.malexj.introduction.aop.after.AfterPointcut.getStudentsMethods()")
+  @After("com.malexj.introduction.pointcut.AfterPointcut.getStudentsMethods()")
   public void getStudentsAdvice(JoinPoint joinPoint) {
     MethodSignature signature = (MethodSignature) joinPoint.getSignature();
     println("method", signature.getMethod(), ", after work!");
