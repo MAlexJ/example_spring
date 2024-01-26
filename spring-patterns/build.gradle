@@ -1,13 +1,26 @@
+buildscript {
+    new BufferedReader(new FileReader(file('../gradle.properties')))
+            .withCloseable { reader ->
+                String line
+                while ((line = reader.readLine()) != null) {
+                    println(line)
+                    String name = line.substring(0, line.indexOf('='))
+                    String value = line.substring(line.indexOf('=') + 1)
+                    project.ext.set(name, value)
+                }
+            }
+}
+
 plugins {
     id 'java'
-    id "com.github.ben-manes.versions" version "0.50.0"
+    id "com.github.ben-manes.versions" version "${benManesVersions}"
 }
 
 group = 'com.malexj'
 version = '0.0.1-SNAPSHOT'
 
 java {
-    sourceCompatibility = '21'
+    sourceCompatibility = "${javaVersion}"
 }
 
 repositories {
@@ -15,13 +28,10 @@ repositories {
 }
 
 dependencies {
-    compileOnly 'org.projectlombok:lombok:1.18.30'
-    annotationProcessor 'org.projectlombok:lombok:1.18.30'
-//    // tests
-    implementation 'org.junit.jupiter:junit-jupiter:5.10.1'
+    compileOnly "org.projectlombok:lombok:${lombokVersion}"
+    annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+    implementation "org.junit.jupiter:junit-jupiter:${junitJupiterVersion}"
     runtimeOnly 'org.junit.platform:junit-platform-launcher'
-//    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.1'
-//    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 tasks.named('test', Test) {
