@@ -8,6 +8,11 @@ import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+/**
+ * Info: <a href="https://habr.com/ru/articles/347752/">Spring AOP. Transaction</a>
+ *
+ * <p>tutorial: https://www.tutorialspoint.com/springaop/springaop_custom_annotation.htm
+ */
 public class CustomAnnotationRunApp {
 
   @Test
