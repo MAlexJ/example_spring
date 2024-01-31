@@ -6,6 +6,7 @@ import com.malexj.base.AbstractClass;
 import com.malexj.spring_example.bean.Child;
 import com.malexj.spring_example.bean.Parent;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.BeanCurrentlyInCreationException;
 import org.springframework.beans.factory.UnsatisfiedDependencyException;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -23,7 +24,7 @@ public class CirculationApp extends AbstractClass {
       var parent = context.getBean(Parent.class);
       println("child:", child, "parent:", parent, "parent.getChild():", parent.getChild());
       fail();
-    } catch (UnsatisfiedDependencyException e) {
+    } catch (UnsatisfiedDependencyException | BeanCurrentlyInCreationException e) {
       println("Error:", e.getMessage());
     }
   }
