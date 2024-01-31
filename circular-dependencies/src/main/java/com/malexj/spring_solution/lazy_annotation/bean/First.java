@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class First {
 
-  @Value("First bean")
+  @Value("${first.bean.name:FirstBean}")
   private String name;
 
   private final Second second;

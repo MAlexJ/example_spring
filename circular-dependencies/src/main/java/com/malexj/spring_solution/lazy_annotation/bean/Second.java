@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Second {
 
-  @Value("Second bean")
+  @Value("${second.bean.name:SecondBean}")
   private String name;
 
   private final First first;
@@ -19,7 +19,9 @@ public class Second {
    *
    * <p>Description:
    *
-   * <p>https://www.baeldung.com/circular-dependencies-in-spring#2-use-lazy
+   * <p>A simple way to break the cycle is by telling Spring to initialize one of the beans lazily.
+   * So, instead of fully initializing the bean, it will create a proxy to inject it into the other
+   * bean. The injected bean will only be fully created when it’s first needed.
    */
   public Second(@Lazy First first) {
     this.first = first;
