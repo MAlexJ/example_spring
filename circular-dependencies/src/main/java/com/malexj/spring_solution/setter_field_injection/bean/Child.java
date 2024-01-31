@@ -1,4 +1,4 @@
-package com.malexj.spring_solution.autowired_annotation.bean;
+package com.malexj.spring_solution.setter_field_injection.bean;
 
 import com.malexj.base.AbstractClass;
 import lombok.Data;
@@ -10,21 +10,21 @@ import org.springframework.stereotype.Component;
 @Data
 @Component
 @EqualsAndHashCode(callSuper = false)
-public class Parent extends AbstractClass {
+public class Child extends AbstractClass {
 
-  @Value("${parent.name:Anna}")
+  @Value("${child.name:Baby}")
   private String name;
 
-  private Child child;
+  private Parent parent;
 
   @Autowired
-  public void setChild(Child child) {
-    println("is autowired bean", this.getClass().getName(), "is null:", child.getParent() == null);
-    this.child = child;
+  public void setParent(Parent parent) {
+    println("is autowired bean", this.getClass().getName(), "is null:", parent.getChild() == null);
+    this.parent = parent;
   }
 
   @Override
   public String toString() {
-    return "{" + "name='" + name + '\'' + ", child=" + child.getName() + '}';
+    return "{" + "name=" + name + ", parent=" + parent.getName() + '}';
   }
 }

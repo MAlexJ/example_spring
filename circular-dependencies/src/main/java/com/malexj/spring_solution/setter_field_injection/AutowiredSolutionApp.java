@@ -1,8 +1,8 @@
-package com.malexj.spring_solution.autowired_annotation;
+package com.malexj.spring_solution.setter_field_injection;
 
 import com.malexj.base.AbstractClass;
-import com.malexj.spring_solution.autowired_annotation.bean.Child;
-import com.malexj.spring_solution.autowired_annotation.bean.Parent;
+import com.malexj.spring_solution.setter_field_injection.bean.Child;
+import com.malexj.spring_solution.setter_field_injection.bean.Parent;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
