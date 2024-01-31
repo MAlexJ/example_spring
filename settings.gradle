@@ -1,2 +1,2 @@
 rootProject.name = 'example_spring'
-include 'spring-core', 'spring-aop', 'spring-patterns'
+include 'spring-core', 'spring-aop', 'spring-patterns', 'circular-dependencies'
