@@ -7,7 +7,9 @@ import com.malexj.service_locator.pattern.service.ServiceName;
 import org.junit.jupiter.api.Test;
 
 /**
- *
+ * Link to tutorial: https://www.oracle.com/java/technologies/service-locator.html <br>
+ * or <br>
+ * https://javatutor.net/articles/j2ee-pattern-service-locator
  */
 public class ServiceLocatorClientApp extends AbstractClass {
 
