@@ -2,14 +2,20 @@
 
 1. core
 2. aop
+3. spring-patterns
+4. circular-dependencies
 
-### Spring v.6.1.2
+### Spring v.6.1.4
+
+* Info: https://docs.spring.io/spring-framework/reference/index.html
 
 ### JDK v.21
 
-### Gradle v.8.5
+### Gradle v.8.6
 
-### Grable
+* Info: https://docs.gradle.org/current/userguide/userguide.html
+
+#### Grable plugins
 
 Plugins:
 

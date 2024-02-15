@@ -17,8 +17,10 @@ have upgrades, or failed to be resolved
 
 info: https://github.com/ben-manes/gradle-versions-plugin
 
+Run command in terminal:
+
 ```
-run gradle dependencyUpdates
+ gradle dependencyUpdates
 ```
 
 ### IDE code style

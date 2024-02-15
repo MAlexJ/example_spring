@@ -1,4 +1,4 @@
-package com.malexj.training_course.event_listener.base.events;
+package com.malexj.training_course.event_listener.base_application_context_event.events;
 
 import com.malexj.training_course.base.AbstractClass;
 import org.springframework.context.ApplicationListener;
@@ -10,6 +10,6 @@ public class ContextStartedListener extends AbstractClass
     implements ApplicationListener<ContextStartedEvent> {
 
   public void onApplicationEvent(ContextStartedEvent event) {
-    println(">>> Application started: " + event.getSource());
+    println("", "3. ContextStartedEvent: ", event.getSource().getClass().getName());
   }
 }

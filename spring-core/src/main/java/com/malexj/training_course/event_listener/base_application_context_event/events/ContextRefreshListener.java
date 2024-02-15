@@ -1,4 +1,4 @@
-package com.malexj.training_course.event_listener.base.events;
+package com.malexj.training_course.event_listener.base_application_context_event.events;
 
 import com.malexj.training_course.base.AbstractClass;
 import org.springframework.context.ApplicationListener;
@@ -10,6 +10,6 @@ public class ContextRefreshListener extends AbstractClass
     implements ApplicationListener<ContextRefreshedEvent> {
   @Override
   public void onApplicationEvent(ContextRefreshedEvent event) {
-    println(" >>> Application context refreshed: " + event.getSource());
+    println("1. ContextRefreshedEvent: ", event.getSource().getClass().getName());
   }
 }
