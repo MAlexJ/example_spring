@@ -13,7 +13,7 @@ public class First {
   @Value("${first.bean.name:FirstBean}")
   private String name;
 
-  private final Second second;
+  private final LazyBeanInjection second;
 
   @Override
   public String toString() {

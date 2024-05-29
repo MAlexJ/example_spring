@@ -1,6 +1,7 @@
 package com.malexj.spring_solution.setter_field_injection;
 
 import com.malexj.base.AbstractClass;
+import com.malexj.base.properties.PropsPropertySourcesConfiguration;
 import com.malexj.spring_solution.setter_field_injection.bean.Child;
 import com.malexj.spring_solution.setter_field_injection.bean.Parent;
 import org.junit.jupiter.api.Test;
@@ -19,7 +20,9 @@ public class AutowiredSolutionApp extends AbstractClass {
 
   @Test
   public void runApp() {
-    var context = new AnnotationConfigApplicationContext(Child.class, Parent.class);
+    var context =
+        new AnnotationConfigApplicationContext(
+            Child.class, Parent.class, PropsPropertySourcesConfiguration.class);
     var child = context.getBean(Child.class);
     var parent = context.getBean(Parent.class);
     println("1.", "child:", child);

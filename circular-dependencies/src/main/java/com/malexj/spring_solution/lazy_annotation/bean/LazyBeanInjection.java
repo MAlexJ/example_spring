@@ -1,13 +1,13 @@
 package com.malexj.spring_solution.lazy_annotation.bean;
 
-import lombok.Getter;
+import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
-@Getter
+@Data
 @Component
-public class Second {
+public class LazyBeanInjection {
 
   @Value("${second.bean.name:SecondBean}")
   private String name;
@@ -23,7 +23,7 @@ public class Second {
    * So, instead of fully initializing the bean, it will create a proxy to inject it into the other
    * bean. The injected bean will only be fully created when it’s first needed.
    */
-  public Second(@Lazy First first) {
+  public LazyBeanInjection(@Lazy First first) {
     this.first = first;
   }
 }
