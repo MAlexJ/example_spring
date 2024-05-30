@@ -10,6 +10,11 @@ public abstract class AbstractClass {
     print(logs);
   }
 
+  protected void printNewLine(Object... obj) {
+    String logs = Arrays.stream(obj).map(Object::toString).collect(Collectors.joining("\n"));
+    print(logs);
+  }
+
   private void print(String str) {
     System.out.println(str);
   }
