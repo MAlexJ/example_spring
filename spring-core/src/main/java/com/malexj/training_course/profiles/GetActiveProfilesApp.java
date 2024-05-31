@@ -22,9 +22,7 @@ public class GetActiveProfilesApp extends AbstractClass {
   public void usingEnvironment() {
     var ctx = new AnnotationConfigApplicationContext(SetActiveProfilesConfig.class);
     var profileManager = ctx.getBean(ProfileManager.class);
-    for (String activeProfile : profileManager.getActiveProfiles()) {
-      println(activeProfile);
-    }
+    println(profileManager.getActiveProfiles());
   }
 
   /** 2. Using spring.profiles.active */

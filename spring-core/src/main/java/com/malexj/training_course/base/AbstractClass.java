@@ -18,6 +18,14 @@ public abstract class AbstractClass {
     print(logs);
   }
 
+  protected void println(String... srt) {
+    if (Objects.isNull(srt)) {
+      return;
+    }
+    String logs = Arrays.stream(srt).filter(Objects::nonNull).collect(Collectors.joining(" "));
+    print(logs);
+  }
+
   private void print(String str) {
     System.out.println(str);
   }

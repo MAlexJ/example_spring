@@ -25,11 +25,12 @@ public class ProfilesApp extends AbstractClass {
   @Test
   public void testNotDevProfile() {
     ApplicationContext ctx = new AnnotationConfigApplicationContext(ComponentScanConfig.class);
-    for (String beanDefinitionName : ctx.getBeanDefinitionNames()) {
-      println(beanDefinitionName);
-    }
+    println(ctx.getBeanDefinitionNames());
 
+    // bean under 'dev' profile
     assertFalse(ctx.containsBean("devDatasourceConfig"));
+
+    // without profile
     assertTrue(ctx.containsBean("myBean"));
 
     NotDevDatasourceConfig notDevDatasource = ctx.getBean(NotDevDatasourceConfig.class);
