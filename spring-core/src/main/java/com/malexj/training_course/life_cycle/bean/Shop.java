@@ -9,19 +9,24 @@ public class Shop extends AbstractClass implements InitializingBean, DisposableB
 
   private String beanNAme;
 
+  @Override
+  public void setBeanName(String name) {
+    this.beanNAme = name;
+    println("0. BeanNameAware::setBeanName", name);
+  }
+
+  @Override
+  public void afterPropertiesSet() {
+    println("1. InitializingBean::afterPropertiesSet ,bean: ", beanNAme);
+  }
+
   public String info(String order) {
-    println("2. order: ", beanNAme, ", bean: ", beanNAme);
+    println("2. Shop::info ", order, ", bean: ", beanNAme);
     return order;
   }
 
   @Override
-  public void afterPropertiesSet() throws Exception {}
-
-  @Override
-  public void destroy() throws Exception {}
-
-  @Override
-  public void setBeanName(String name) {
-    this.beanNAme = name;
+  public void destroy() {
+    println("3. DisposableBean::destroy ,bean: ", beanNAme);
   }
 }

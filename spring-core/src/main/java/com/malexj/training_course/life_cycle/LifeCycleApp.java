@@ -5,7 +5,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import com.malexj.training_course.life_cycle.bean.Note;
 import com.malexj.training_course.life_cycle.bean.Phone;
 import com.malexj.training_course.life_cycle.bean.Shop;
-import com.malexj.training_course.life_cycle.configuration.LifeCycleConfiguration;
+import com.malexj.training_course.life_cycle.configuration.PhoneLifeCycleConfiguration;
+import com.malexj.training_course.life_cycle.configuration.ShopLifeCycleConfiguration;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -20,14 +21,13 @@ public class LifeCycleApp {
   @Test
   public void testPostConstructAndPreDestroyAnnotation() {
     // given
-    AnnotationConfigApplicationContext ctx =
-        new AnnotationConfigApplicationContext(LifeCycleConfiguration.class);
+    var ctx = new AnnotationConfigApplicationContext(Note.class);
 
     // when
     var note = ctx.getBean(Note.class);
 
     // then
-    assertEquals("note", note.info("note"));
+    assertEquals("new note name", note.info("new note name"));
 
     // and
     ctx.close();
@@ -40,8 +40,7 @@ public class LifeCycleApp {
   @Test
   public void testBeanConfigurationInitAndDestroyAnnotation() {
     // given
-    AnnotationConfigApplicationContext ctx =
-        new AnnotationConfigApplicationContext(LifeCycleConfiguration.class);
+    var ctx = new AnnotationConfigApplicationContext(PhoneLifeCycleConfiguration.class);
 
     // when
     var phone = ctx.getBean(Phone.class);
@@ -62,14 +61,13 @@ public class LifeCycleApp {
   @Test
   public void testBeanWithInitializingBeaDisposableBeanInterfaces() {
     // given
-    AnnotationConfigApplicationContext ctx =
-        new AnnotationConfigApplicationContext(LifeCycleConfiguration.class);
+    var ctx = new AnnotationConfigApplicationContext(ShopLifeCycleConfiguration.class);
 
     // when
     var shop = ctx.getBean(Shop.class);
 
     // then
-    assertEquals("Laptop", shop.info("Nokia"));
+    assertEquals("Laptop", shop.info("Laptop"));
 
     // and
     ctx.close();
