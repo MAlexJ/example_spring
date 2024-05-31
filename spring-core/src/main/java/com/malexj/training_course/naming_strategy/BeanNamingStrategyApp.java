@@ -28,7 +28,9 @@ public class BeanNamingStrategyApp extends AbstractClass {
   @Test
   public void classLevelAnnotations() {
     ApplicationContext ctx = new AnnotationConfigApplicationContext(ComponentScanConfig.class);
-    printNewLine(ctx.getBeanDefinitionNames());
+    for (String beanDefinitionName : ctx.getBeanDefinitionNames()) {
+      println(beanDefinitionName);
+    }
     assertTrue(ctx.containsBean("classLevelAnnotationsBean"));
   }
 

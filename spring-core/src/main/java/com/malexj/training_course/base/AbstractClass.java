@@ -1,17 +1,20 @@
 package com.malexj.training_course.base;
 
 import java.util.Arrays;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 public abstract class AbstractClass {
 
   protected void println(Object... obj) {
-    String logs = Arrays.stream(obj).map(Object::toString).collect(Collectors.joining(" "));
-    print(logs);
-  }
-
-  protected void printNewLine(Object... obj) {
-    String logs = Arrays.stream(obj).map(Object::toString).collect(Collectors.joining("\n"));
+    if (Objects.isNull(obj)) {
+      return;
+    }
+    String logs =
+        Arrays.stream(obj)
+            .filter(Objects::nonNull)
+            .map(Object::toString)
+            .collect(Collectors.joining(" "));
     print(logs);
   }
 
