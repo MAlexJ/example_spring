@@ -26,7 +26,7 @@ public abstract class AbstractClass {
     print(logs);
   }
 
-  protected void printWewLine(String... srt) {
+  protected void printNewLine(String... srt) {
     if (Objects.isNull(srt)) {
       return;
     }

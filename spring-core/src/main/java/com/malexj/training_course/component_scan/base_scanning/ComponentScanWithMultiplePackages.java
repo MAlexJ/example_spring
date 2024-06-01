@@ -35,7 +35,7 @@ public class ComponentScanWithMultiplePackages extends AbstractClass {
   @Test
   public void run() {
     var ctx = new AnnotationConfigApplicationContext(ComponentScanWithMultiplePackages.class);
-    printWewLine(ctx.getBeanDefinitionNames());
+    printNewLine(ctx.getBeanDefinitionNames());
 
     /*
     scan the current package and all of its sub-packages

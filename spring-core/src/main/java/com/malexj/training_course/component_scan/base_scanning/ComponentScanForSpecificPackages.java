@@ -19,7 +19,7 @@ public class ComponentScanForSpecificPackages extends AbstractClass {
   @Test
   public void run() {
     var ctx = new AnnotationConfigApplicationContext(ComponentScanForSpecificPackages.class);
-    printWewLine(ctx.getBeanDefinitionNames());
+    printNewLine(ctx.getBeanDefinitionNames());
 
     /*
     scan the current package and all of its sub-packages

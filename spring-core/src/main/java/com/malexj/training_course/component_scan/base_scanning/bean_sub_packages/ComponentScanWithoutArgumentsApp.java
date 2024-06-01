@@ -21,7 +21,7 @@ public class ComponentScanWithoutArgumentsApp extends AbstractClass {
 
   public void run() {
     var ctx = new AnnotationConfigApplicationContext(ComponentScanWithoutArgumentsApp.class);
-    printWewLine(ctx.getBeanDefinitionNames());
+    printNewLine(ctx.getBeanDefinitionNames());
 
     /*
     scan the current package and all of its sub-packages

@@ -4,8 +4,6 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.malexj.training_course.base.AbstractClass;
-import com.malexj.training_course.component_scan.base_scanning.bean_sub_packages.ComponentScanWithoutArgumentsApp;
-import com.malexj.training_course.component_scan.bean.Shop;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
@@ -18,29 +16,27 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @ComponentScan(
-    basePackages = {
-      "com.malexj.training_course.component_scan",
-      "com.malexj.training_course.bean_scope.sample_1.bean"
-    },
     excludeFilters = {
+      @ComponentScan.Filter(type = FilterType.REGEX, pattern = ".*Shop"),
       @ComponentScan.Filter(
-          type = FilterType.ASSIGNABLE_TYPE,
-          value = ComponentScanWithMultiplePackages.class),
+          type = FilterType.REGEX,
+          pattern = ".*ComponentScanWithMultiplePackages"),
       @ComponentScan.Filter(
-          type = FilterType.ASSIGNABLE_TYPE,
-          value = ComponentScanForSpecificPackages.class),
+          type = FilterType.REGEX,
+          pattern = ".*ComponentScanForSpecificPackages"),
       @ComponentScan.Filter(
-          type = FilterType.ASSIGNABLE_TYPE,
-          value = ComponentScanWithoutArgumentsApp.class),
-      @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, value = Shop.class)
+          type = FilterType.REGEX,
+          pattern = ".*ComponentScanWithExclusionsByScannedClasses"),
+      @ComponentScan.Filter(type = FilterType.REGEX, pattern = ".*ComponentScanWithoutArgumentsApp")
     })
-public class ComponentScanWithExclusionsByScannedClasses extends AbstractClass {
+public class ComponentScanWithExclusionsByPatternMatching extends AbstractClass {
 
-  /** the annotation supports several flexible options for filtering the scanned classes */
+  /** Another way is to use a filter, specifying the pattern for the classes to exclude */
   @Test
-  public void applyFilterByScannedClasses() {
+  public void applyFilterSpecifyingByPattern() {
     var ctx =
-        new AnnotationConfigApplicationContext(ComponentScanWithExclusionsByScannedClasses.class);
+        new AnnotationConfigApplicationContext(ComponentScanWithExclusionsByPatternMatching.class);
+
     printNewLine(ctx.getBeanDefinitionNames());
 
     /*
@@ -56,5 +52,6 @@ public class ComponentScanWithExclusionsByScannedClasses extends AbstractClass {
     assertFalse(ctx.containsBean("componentScanWithMultiplePackages"));
     assertFalse(ctx.containsBean("componentScanForSpecificPackages"));
     assertFalse(ctx.containsBean("componentScanWithoutArgumentsApp"));
+    assertFalse(ctx.containsBean("componentScanWithExclusionsByScannedClasses"));
   }
 }
