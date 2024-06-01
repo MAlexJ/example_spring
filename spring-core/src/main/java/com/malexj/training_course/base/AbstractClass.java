@@ -26,6 +26,14 @@ public abstract class AbstractClass {
     print(logs);
   }
 
+  protected void printWewLine(String... srt) {
+    if (Objects.isNull(srt)) {
+      return;
+    }
+    String logs = Arrays.stream(srt).filter(Objects::nonNull).collect(Collectors.joining("\n"));
+    print(logs);
+  }
+
   private void print(String str) {
     System.out.println(str);
   }
