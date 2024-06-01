@@ -5,10 +5,15 @@ import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-public class IncludeFiltersApp extends AbstractClass {
+/**
+ * FilterType.ASPECTJ
+ *
+ * <p>link: https://www.baeldung.com/spring-componentscan-filter-type#aspect_filter
+ */
+public class AspectjFilterTypeApp extends AbstractClass {
 
   @Test
-  public void includeFilters() {
-    ApplicationContext ctx = new AnnotationConfigApplicationContext();
+  public void filterType() {
+    ApplicationContext ctx = new AnnotationConfigApplicationContext(AspectjFilterTypeApp.class);
   }
 }
