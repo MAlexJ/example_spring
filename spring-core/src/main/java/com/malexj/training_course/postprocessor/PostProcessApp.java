@@ -12,7 +12,6 @@ import com.malexj.training_course.postprocessor.postprocessors.WaiterOnDutyBeanF
 import java.util.List;
 import java.util.function.Predicate;
 import org.junit.jupiter.api.Test;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
@@ -35,9 +34,10 @@ public class PostProcessApp extends AbstractClass {
   @Test
   public void testDiscountBeanPostProcessor() {
     // given
-    ApplicationContext ctx = new AnnotationConfigApplicationContext(PostProcessConfiguration.class);
-    var restaurant = ctx.getBean(Restaurant.class);
+    var ctx = new AnnotationConfigApplicationContext(PostProcessConfiguration.class);
+    printNewLine(ctx.getBeanDefinitionNames());
 
+    var restaurant = ctx.getBean(Restaurant.class);
     int discount =
         restaurant.getMenu().stream()
             .filter(isFoodName("Steak"))
@@ -59,10 +59,6 @@ public class PostProcessApp extends AbstractClass {
     assertEquals(30, discount);
   }
 
-  private Predicate<Food> isFoodName(String dishAme) {
-    return food -> food.getDishName().equals(dishAme);
-  }
-
   /**
    * 1. Setup Spring container
    *
@@ -72,7 +68,7 @@ public class PostProcessApp extends AbstractClass {
   @Test
   public void testMenuFactoryBeanPostProcessor() {
     // given
-    ApplicationContext ctx = new AnnotationConfigApplicationContext(PostProcessConfiguration.class);
+    var ctx = new AnnotationConfigApplicationContext(PostProcessConfiguration.class);
     var restaurant = ctx.getBean(Restaurant.class);
 
     // when
@@ -98,13 +94,17 @@ public class PostProcessApp extends AbstractClass {
   @Test
   public void testWaiterOnDutyBeanFactoryPostProcessor() {
     // given
-    ApplicationContext ctx = new AnnotationConfigApplicationContext(PostProcessConfiguration.class);
-    Waiter waiter = ctx.getBean(Waiter.class);
+    var ctx = new AnnotationConfigApplicationContext(PostProcessConfiguration.class);
+    var waiter = ctx.getBean(Waiter.class);
 
     // when
-    String answer = waiter.takeOrder();
+    var answer = waiter.takeOrder();
 
     // then
     assertEquals("I can take order", answer);
+  }
+
+  private Predicate<Food> isFoodName(String dishAme) {
+    return food -> food.getDishName().equals(dishAme);
   }
 }
