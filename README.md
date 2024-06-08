@@ -11,7 +11,7 @@
 
 ### JDK v.21
 
-### Gradle v.8.6
+### Gradle v.8.8
 
 * Info: https://docs.gradle.org/current/userguide/userguide.html
 
