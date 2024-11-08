@@ -12,11 +12,12 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class LifeCycleApp {
 
-  /**
-   * Bean configuration: <br>
-   * 1. @Component annotation <br>
-   * 2. @PostConstruct annotation <br>
-   * 3. @PreDestroy annotation
+  /*
+   * Bean configuration:
+   * 1. Class initialization: constructor
+   * 2. BeanNameAware::setBeanName > @Component annotation
+   * 3. @PostConstruct annotation
+   * 4. @PreDestroy annotation
    */
   @Test
   public void testPostConstructAndPreDestroyAnnotation() {
@@ -33,8 +34,8 @@ public class LifeCycleApp {
     ctx.close();
   }
 
-  /**
-   * Bean configuration: <br>
+  /*
+   * Bean configuration:
    * 1. @Bean(initMethod = "init", destroyMethod = "destroy") annotation with init and destroy
    */
   @Test
@@ -52,10 +53,10 @@ public class LifeCycleApp {
     ctx.close();
   }
 
-  /**
-   * Bean configuration: <br>
-   * 1. @Bean annotation<br>
-   * 2. InitializingBean interface <br>
+  /*
+   * Bean configuration:
+   * 1. @Bean annotation
+   * 2. InitializingBean interface
    * 3. DisposableBean interface
    */
   @Test
