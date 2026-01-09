@@ -7,8 +7,9 @@ import org.springframework.stereotype.Component;
 @Data
 @Component
 public class Parent {
-  @Value("parent")
-  private String name;
 
-  private final Child child;
+    @Value("parent")
+    private String name;
+
+    private final Child child;
 }

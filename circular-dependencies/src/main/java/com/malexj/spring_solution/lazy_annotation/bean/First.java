@@ -10,13 +10,13 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class First {
 
-  @Value("${first.bean.name:FirstBean}")
-  private String name;
+    @Value("${first.bean.name:FirstBean}")
+    private String name;
 
-  private final LazyBeanInjection second;
+    private final LazyBeanInjection second;
 
-  @Override
-  public String toString() {
-    return "{" + "name=" + name + ", second=" + second.getName() + '}';
-  }
+    @Override
+    public String toString() {
+        return "{" + "name=" + name + ", second=" + second.getName() + '}';
+    }
 }

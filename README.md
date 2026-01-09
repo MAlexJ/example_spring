@@ -5,13 +5,13 @@
 3. spring-patterns
 4. circular-dependencies
 
-### Spring v.6.+
+### Spring v7.0.2
 
 * Info: https://docs.spring.io/spring-framework/reference/index.html
 
-### JDK v.21
+### JDK v25
 
-### Gradle v.8.+
+### Gradle v9.2.1
 
 * Info: https://docs.gradle.org/current/userguide/userguide.html
 

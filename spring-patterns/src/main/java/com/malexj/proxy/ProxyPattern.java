@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import com.malexj.base.AbstractClass;
 import org.junit.jupiter.api.Test;
 
-/**
+/*
  * Information <a href="https://www.baeldung.com/java-proxy-pattern">The Proxy Pattern in Java</a>
  * site: www.baeldung.com
  */
